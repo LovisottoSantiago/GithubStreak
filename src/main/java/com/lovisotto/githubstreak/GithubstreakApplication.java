@@ -1,9 +1,11 @@
 package com.lovisotto.githubstreak;
 
+import java.io.IOException;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -14,12 +16,21 @@ public class GithubstreakApplication {
 		SpringApplication.run(GithubstreakApplication.class, args);
 	}
 
-	@GetMapping("/nombre")
-	public String hello(@RequestParam(value = "name", defaultValue = "world") String name) {
-		return String.format("Hello %s!", name); //http://localhost:8080/nombre?name=Lovi
-	}
+	@GetMapping("/scrape/{userName}")
+	public String scrapeUrl(@PathVariable String userName) {
+			try {
+				Scraper scraper = new Scraper("https://github.com/" + userName);
+				int totalCommits = scraper.getData();
+				return "Total de commits: " + totalCommits; 
+			} catch (IOException e) {
+				return "Error al hacer scraping: " + e.getMessage();
+			}
+		}
 	
- 
+
+
+
+	
 
 
 }
