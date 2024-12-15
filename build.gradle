@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.4.0'
 	id 'io.spring.dependency-management' version '1.1.6'
+    id 'com.bmuschko.docker-remote-api' version '7.2.0'
 }
 
 group = 'com.lovisotto'
@@ -12,6 +13,8 @@ java {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
+
+apply plugin: 'com.bmuschko.docker-remote-api'
 
 repositories {
 	mavenCentral()
@@ -29,4 +32,9 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+bootJar {
+    archiveBaseName = 'githubstreak'
+    archiveVersion = '0.0.1-SNAPSHOT'
 }

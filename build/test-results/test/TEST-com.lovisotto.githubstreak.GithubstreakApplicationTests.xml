@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.lovisotto.githubstreak.GithubstreakApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-15T01:58:37" hostname="lovi" time="0.941">
+<testsuite name="com.lovisotto.githubstreak.GithubstreakApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-15T02:57:43" hostname="lovi" time="1.019">
   <properties/>
-  <testcase name="contextLoads()" classname="com.lovisotto.githubstreak.GithubstreakApplicationTests" time="0.941"/>
-  <system-out><![CDATA[22:58:35.315 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.lovisotto.githubstreak.GithubstreakApplicationTests]: GithubstreakApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-22:58:35.471 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.lovisotto.githubstreak.GithubstreakApplication for test class com.lovisotto.githubstreak.GithubstreakApplicationTests
+  <testcase name="contextLoads()" classname="com.lovisotto.githubstreak.GithubstreakApplicationTests" time="1.019"/>
+  <system-out><![CDATA[23:57:40.233 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.lovisotto.githubstreak.GithubstreakApplicationTests]: GithubstreakApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:57:40.395 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.lovisotto.githubstreak.GithubstreakApplication for test class com.lovisotto.githubstreak.GithubstreakApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,9 +14,9 @@
 
  :: Spring Boot ::                (v3.4.0)
 
-2024-12-14T22:58:36.086-03:00  INFO 974105 --- [githubstreak] [    Test worker] c.l.g.GithubstreakApplicationTests       : Starting GithubstreakApplicationTests using Java 21.0.5 with PID 974105 (started by lovi in /home/lovi/GitHub/GithubStreak)
-2024-12-14T22:58:36.088-03:00  INFO 974105 --- [githubstreak] [    Test worker] c.l.g.GithubstreakApplicationTests       : No active profile set, falling back to 1 default profile: "default"
-2024-12-14T22:58:37.691-03:00  INFO 974105 --- [githubstreak] [    Test worker] c.l.g.GithubstreakApplicationTests       : Started GithubstreakApplicationTests in 1.985 seconds (process running for 3.488)
+2024-12-14T23:57:41.088-03:00  INFO 1024794 --- [githubstreak] [    Test worker] c.l.g.GithubstreakApplicationTests       : Starting GithubstreakApplicationTests using Java 21.0.5 with PID 1024794 (started by lovi in /home/lovi/GitHub/GithubStreak)
+2024-12-14T23:57:41.090-03:00  INFO 1024794 --- [githubstreak] [    Test worker] c.l.g.GithubstreakApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2024-12-14T23:57:43.015-03:00  INFO 1024794 --- [githubstreak] [    Test worker] c.l.g.GithubstreakApplicationTests       : Started GithubstreakApplicationTests in 2.389 seconds (process running for 4.123)
 ]]></system-out>
   <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (/home/lovi/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.10/e8eb255b2c378b9a6c7341e7b0e12f0a5636377/byte-buddy-agent-1.15.10.jar)
