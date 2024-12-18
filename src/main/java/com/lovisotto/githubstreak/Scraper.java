@@ -36,24 +36,24 @@ public class Scraper {
 
         List<WebElement> tdElements = driver.findElements(By.cssSelector("td.ContributionCalendar-day"));
        
-        int size = tdElements.size(); // 365 days
-        int rows = size / 7; // 52
-        int columns = 7;
+        int size = tdElements.size();
+        int rows = 7;
+        int columns = size / rows; 
 
         int streak = 0; 
 
-        for (int col = columns - 1; col >= 0; col--) {
-            for (int row = rows - 1; row >= 0; row--) {
+        for (int row = rows - 1; row >= 0; row--) {
+            for (int col = columns - 1; col >= 0; col--) {
                 
-                int index = row * columns;
+                int index = col * rows + row;
 
                 if (index < size) {
                     WebElement element = tdElements.get(index);
                     String dataLevel = element.getAttribute("data-level"); // contribution check
+                    String date = element.getAttribute("data-date");
 
-                    if (dataLevel != null && Integer.parseInt(dataLevel) > 0) {
-                        streak++;
-                    }
+                    System.out.println(date);
+
                 }
             }
         }
