@@ -50,9 +50,12 @@ public class Scraper {
                 if (index < size) {
                     WebElement element = tdElements.get(index);
                     String dataLevel = element.getAttribute("data-level"); // contribution check
-                    String date = element.getAttribute("data-date");
 
-                    System.out.println(date);
+                    if (Integer.parseInt(dataLevel) > 0) {
+                            String date = element.getAttribute("data-date");
+                            System.out.println(date);
+                    }
+                    
 
                 }
             }
