@@ -2,6 +2,8 @@ package com.lovisotto.githubstreak;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -36,32 +38,35 @@ public class Scraper {
 
         List<WebElement> tdElements = driver.findElements(By.cssSelector("td.ContributionCalendar-day"));
        
-        int size = tdElements.size();
-        int rows = 7;
-        int columns = size / rows; 
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         int streak = 0; 
 
-        for (int row = rows - 1; row >= 0; row--) {
-            for (int col = columns - 1; col >= 0; col--) {
-                
-                int index = col * rows + row;
-
-                if (index < size) {
-                    WebElement element = tdElements.get(index);
-                    String dataLevel = element.getAttribute("data-level"); // contribution check
-
-                    if (Integer.parseInt(dataLevel) > 0) {
-                            String date = element.getAttribute("data-date");
-                            System.out.println(date);
+        for (@SuppressWarnings("unused") WebElement tdElement : tdElements) {
+            String expectedDate = currentDate.format(formatter);
+    
+            for (WebElement element : tdElements) {
+                String date = element.getAttribute("data-date");
+    
+                if (date != null && date.equals(expectedDate)) {
+                    String dataLevel = element.getAttribute("data-level");
+                    System.out.println("Fecha: " + date + ", Nivel: " + dataLevel);
+    
+                    if (dataLevel != null && !dataLevel.equals("0")) {
+                        streak++;
+                    } else {
+                        return streak;
                     }
                     
-
+                    break; 
                 }
             }
-        }
 
-        driver.quit(); 
+            currentDate = currentDate.minusDays(1);
+        }
+    
+        driver.quit();
         return streak;
 
     }

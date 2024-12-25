@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GithubstreakApplication<githubstreak>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.lovisotto.githubstreak.GithubstreakApplication",
+            "projectName": "githubstreak",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
